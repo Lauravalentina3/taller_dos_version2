@@ -1,0 +1,83 @@
+<ion-content [fullscreen]="true" class="perfil-content">
+  <ion-grid class="ion-text-center">
+
+    <!-- Imagen de perfil -->
+    <ion-row>
+      <ion-col>
+        <img 
+          [src]="info.imagen || 'assets/images/perfil.png'" 
+          alt="Perfil" 
+          class="perfil-img"
+        />
+        <input 
+          type="file" 
+          hidden 
+          #fileInput 
+          (change)="onFileSelected($event)" 
+          accept="image/*"
+        />
+        <ion-button size="small" (click)="fileInput.click()">
+          Cambiar Imagen
+        </ion-button>
+      </ion-col>
+    </ion-row>
+
+    <!-- Mostrar datos (vista normal) -->
+    <ng-container *ngIf="!editando">
+      <ion-list>
+        <ion-item>
+          <ion-label>Nombres: <strong>{{ info.nombre }}</strong></ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>Apellidos: <strong>{{ info.apellidos }}</strong></ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>Correo: <strong>{{ info.correo }}</strong></ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>Teléfono: <strong>{{ info.tel }}</strong></ion-label>
+        </ion-item>
+      </ion-list>
+
+      <!-- Botón editar -->
+      <ion-button expand="block" class="ion-margin-top" (click)="editar()">
+        Editar Perfil
+      </ion-button>
+    </ng-container>
+
+    <!-- Formulario de edición -->
+    <ng-container *ngIf="editando">
+      <ion-list>
+        <ion-item>
+          <ion-label position="stacked">Nombres</ion-label>
+          <ion-input [(ngModel)]="info.nombre"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked">Apellidos</ion-label>
+          <ion-input [(ngModel)]="info.apellidos"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked">Correo</ion-label>
+          <ion-input [(ngModel)]="info.correo"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked">Teléfono</ion-label>
+          <ion-input [(ngModel)]="info.tel"></ion-input>
+        </ion-item>
+      </ion-list>
+
+      <!-- Botones -->
+      <ion-button expand="block" color="light" (click)="volverInicio()">
+          <ion-icon name="home-outline" slot="start"></ion-icon>
+          Volver al inicio
+      </ion-button>
+
+      <ion-button expand="block"(click)="guardar()">
+        Guardar
+      </ion-button>
+      <ion-button expand="block" color="medium" (click)="cancelar()">
+        Cancelar
+      </ion-button>
+    </ng-container>
+  </ion-grid>
+</ion-content>

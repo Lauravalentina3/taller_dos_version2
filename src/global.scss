@@ -1,0 +1,606 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+/* Core CSS required for Ionic components to work properly */
+@import "@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "@ionic/angular/css/normalize.css";
+@import "@ionic/angular/css/structure.css";
+@import "@ionic/angular/css/typography.css";
+@import "@ionic/angular/css/display.css";
+
+/* Optional CSS utils that can be commented out */
+@import "@ionic/angular/css/padding.css";
+@import "@ionic/angular/css/float-elements.css";
+@import "@ionic/angular/css/text-alignment.css";
+@import "@ionic/angular/css/text-transformation.css";
+@import "@ionic/angular/css/flex-utils.css";
+
+/**
+ * Ionic Dark Mode
+ * -----------------------------------------------------
+ * For more info, please see:
+ * https://ionicframework.com/docs/theming/dark-mode
+ */
+
+/* @import "@ionic/angular/css/palettes/dark.always.css"; */
+/* @import "@ionic/angular/css/palettes/dark.class.css"; */
+//@import '@ionic/angular/css/palettes/dark.system.css';
+
+
+/**********************************************************
+    VARIABLES CSS PERSONALIZADAS
+
+***********************************************************/
+
+:root{
+    /*colores principales del diseño*/
+
+    --primary-color: #f47054;
+    --secondary-color: #000000;
+    --background-color: #cccccc;
+    --white-color:#ffffff;
+    --black-color: #000000;
+    --light-gray:#cccccc;
+    --ion-background-color: #f47054;
+    --ion-text-color: #ffffff;
+
+    /*Espaciado de los bordes*/
+    --border-radius: 25px;
+    --border-radius-small: 15px;
+    --border-radius-large: 35px;
+    --shadow-color:#f47054;
+} 
+
+/*Fondo Personalizado*/
+
+ion-content{
+    --background: var(--background-color) !important;
+    --color: var(--white-color) !important;
+}
+
+/*Contenedor Centrado*/
+
+.centered-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
+    position: relative;
+}
+
+/* Icono Principal*/
+
+.app-icon {
+    width: 120px;
+    height: 120px;
+    background: var(--primary-color);
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin:0 auto;
+    position: relative;
+    box-shadow: 0 4px 20px var(- --shadow-color);
+    overflow: hidden;
+    transition: all 0.3s ease;
+    z-index: 1;
+}
+
+.logo-image{
+    width: 80px;
+    height: 800px;
+    object-fit: contain;
+    filter: brightness(0) invert(1);
+    transition: all 0.3s ease;
+
+}
+
+.circle-accent{
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 15px;
+    height: 15px;
+    background-color: var(----black-color);
+    border-radius: 5px;
+    box-shadow: 0 1px 3px #f47054;
+}
+
+.app-name {
+    color: var(--primary-color);
+    font-size: 40px;
+    font-weight: bold;
+    margin: 30px 0px 10px 0px;
+    text-align: center;
+    text-shadow: 0 2px 4px #f3937f;
+
+}
+
+.user-name {
+    color: var(--white-color);
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0px;
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    text-shadow: 0 2px 4px #f47054;
+}
+
+/*Animacion Basica*/
+
+.pulse{
+    animation: pulse 1s infinite;
+}
+
+@keyframes pulse{
+    0%{
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(1.05);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+
+/* Responsive desing*/
+
+@media (max-width: 480px) {
+    .app-icon{
+        width: 100px;
+        height: 100px;
+    }
+    .app-name {
+        font-size: 28px;
+    }
+    .user-name {
+        font-size: 16px;
+    }
+}
+
+/***************HOME**********************/
+
+.home-container {
+  --background: #f1a89a;
+  text-align: center;
+}
+
+.home-logo {
+  width: 150px;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.home-title {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #f47054;
+  margin-bottom: 1rem;
+}
+
+.home-subtitle {
+  font-size: 1rem;
+  color: #000000;
+  margin-bottom: 2rem;
+  line-height: 1.5;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.home-register-link {
+  font-size: 0.95rem;
+  color: #f47054;
+  text-decoration: underline;
+  display: block;   
+  margin-top: 3.5rem; 
+  text-align: center;  
+}
+
+.btn-primary{
+  --background: #f47054; 
+  --border-radius: 25px; 
+  font-weight: bold; 
+  width: 100%; 
+  max-width: 300px; 
+  margin: 0 auto 1rem auto;
+  display: block;
+}
+
+.register-link {
+  display: inline-block;
+  margin-top: 10px;
+  color: #f47054;
+  font-weight: bold;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.register-link:hover {
+  color: #f47054;
+  text-decoration: underline;
+  transform: scale(1.05);
+}
+
+/*********************LOGIN*****************/
+.login-content {
+  --background: #f47054; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.login-logo {
+  width: 120px;  
+  margin-top: 40px;
+  height: auto;
+  margin: 1rem auto;
+  display: block;
+}
+
+.login-title {
+  font-size: 40px;
+  font-weight: bold;
+  color: #f47054;
+  margin-top: 10px;
+  margin-bottom: 0.3rem;
+}
+
+.login-subtitle {
+  font-size: 24px;
+  color: #000000;
+  margin-bottom: 1.5rem;
+}
+
+.login-box {
+  background: #c5ada8;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+  margin-top: 20px;
+}
+
+/* Inputs */
+ion-item {
+  --background: #fff;
+  --border-radius: 8px;
+  --min-height: 50px; /* altura mínima uniforme */
+  margin-bottom: 1rem;
+  color: #000;
+  padding-left: 0.5rem;
+}
+
+ion-input {
+  color: #000;
+  font-size: 16px;
+}
+
+.login-btn {
+  --background: #f47054;
+  --border-radius: 25px;
+  font-weight: bold;
+    margin-top: 20px;
+  margin-bottom: 1rem;
+}
+
+ion-icon {
+  font-size: 22px;
+  color: #f47054; 
+  margin-right: 6px; 
+}
+
+.recover {
+  text-align: center;
+  margin-top: 10px;
+  color: #070708;
+  cursor: pointer;
+  text-decoration: underline;
+  font-weight: 500;
+}
+
+.google-btn {
+    margin-top: 15px;
+  --background: #fff;
+  --color: #000;
+  font-weight: 500;
+  border-radius: 25px;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.google-icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+}
+
+.register {
+  font-size: 14px;
+  color: #333;
+  margin-top: 10px;
+  text-align: center;
+
+}
+
+.register-link {
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.register a {
+  color: #c25944;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+/***********************REGISTRO*************/
+
+/* Fondo */
+ion-content {
+  --background: #cccc; /* color de fondo */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* Contenedor del formulario */
+.registro-container {
+  background: #d4beb9;
+  padding: 2rem 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.25);
+  width: 100%;
+  max-width: 420px;
+  margin: auto;
+}
+
+/* Logo */
+.registro-logo {
+  width: 100px;
+  height: auto;
+  margin: 0 auto 0.5rem;
+  display: block;
+}
+
+/* Títulos */
+.registro-title {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #f47054;
+  margin-bottom: 0.3rem;
+}
+
+.registro-subtitle {
+  font-size: 0.95rem;
+  color: #020202;
+  margin-bottom: 1.5rem;
+}
+
+/* Items del formulario */
+ion-item {
+  --background: #fde9e5;
+  --border-radius: 8px;
+  margin-bottom: 1rem;
+  color: #000;
+}
+
+/* Inputs */
+ion-input {
+  color: #000;
+}
+
+/* Botón registro */
+ion-button {
+  --background: #f47054;
+  --border-radius: 25px;
+  font-weight: bold;
+  margin-top: 1rem;
+}
+
+/* Mensajes de error */
+ion-note[color="danger"] {
+  font-size: 0.8rem;
+  margin-left: 0.5rem;
+  margin-top: -0.3rem;
+  margin-bottom: 0.8rem;
+  display: block;
+  text-align: left;
+}
+
+.terminos-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+/* Redirección */
+.redirect {
+  font-size: 0.9rem;
+  margin-top: 1rem;
+  color: #050505;
+
+  a {
+    color: #f47054;
+    font-weight: bold;
+    text-decoration: underline;
+  }
+}
+
+
+/***************************RECUPERAR CONTRASEÑA*******************/
+
+.recuperar-content {
+  --background: #eef5fb;
+
+  ion-grid {
+    padding: 20px;
+  }
+
+  .logo {
+    width: 200px;
+    margin: 20px auto;
+    display: block;
+  }
+
+  p {
+    font-size: 20px;
+    color: black;
+    margin-bottom: 20px;
+  }
+
+  ion-item {
+    --border-radius: 10px;
+    margin-bottom: 15px;
+    --background: #fff;
+    --border-color: #ddd;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  }
+
+  ion-input {
+    font-size: 14px;
+  }
+
+  ion-button {
+    --border-radius: 10px;
+    font-weight: bold;
+  }
+
+  a {
+    color: #83564d;
+    text-decoration: none;
+  }
+}
+
+
+/******************************PERFIL*********************/
+
+.perfil-content {
+  --background: #f9fafc;
+
+  ion-grid {
+    padding: 20px;
+  }
+
+  .perfil-img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin: 16px auto;
+    display: block;
+    object-fit: cover;
+    border: 3px solid var(--ion-background-color);
+  }
+
+  .boton-guardar {
+  --background: #f47054; 
+  --background-hover: #c48072;
+  --color: white; 
+}
+
+
+  ion-item {
+    --border-radius: 10px;
+    margin: 10px 0;
+    --background: #fff;
+    --border-color: #ddd;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  }
+
+  ion-label {
+    font-size: 15px;
+    color: #333;
+
+    strong {
+      color: #d8b5ae;
+    }
+  }
+
+  ion-button {
+    --border-radius: 10px;
+    font-weight: bold;
+    margin-top: 15px;
+  }
+}
+
+/*****************************INICIO********************************/
+
+.inicio-container {
+  padding: 20px;
+  text-align: center;
+
+  .hero {
+    margin-top: 40px;
+
+    h1 {
+      font-size: 24px;
+      font-weight: bold;
+      color: var(--primary-color);
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 16px;
+      color: #666;
+      margin-bottom: 20px;
+    }
+
+    ion-button {
+      --border-radius: 25px;
+      font-weight: bold;
+    }
+  }
+
+  .tarjetas {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+
+    ion-card {
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+
+      ion-card-title {
+        font-size: 18px;
+        font-weight: bold;
+        text-align: center;
+      }
+
+      img {
+        width: 100%;
+        height: 160px;
+        object-fit: cover;
+      }
+    }
+  }
+}
+
+// Para pantallas grandes (tablet/escritorio)
+@media (min-width: 768px) {
+  .tarjetas {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

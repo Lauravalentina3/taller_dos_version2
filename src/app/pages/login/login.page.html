@@ -1,0 +1,70 @@
+<ion-content [fullscreen]="true" class="login-content">
+  <ion-grid>
+    <!-- Logo y título -->
+    <ion-row class="ion-justify-content-center">
+      <ion-col size="12" class="ion-text-center">
+        <img src="assets/images/logo.png" alt="Logo" class="login-logo" />
+        <h1 class="login-title">Family Friend</h1>
+        <p class="login-subtitle">
+          La aventura está por iniciar, por favor inicia sesión
+        </p>
+      </ion-col>
+    </ion-row>
+
+    <!-- Formulario de login -->
+    <form [formGroup]="loginForm">
+      <ion-row class="ion-justify-content-center">
+        <ion-col size="10" size-md="6" class="login-box">
+          <!-- Usuario -->
+          <ion-item>
+            <img
+              slot="start"
+              src="assets/images/user.png"
+              alt="Usuario"
+              style="width: 25px; height: 25px"
+            />
+            <ion-input
+              formControlName="correo"
+              placeholder="Correo"
+            ></ion-input>
+          </ion-item>
+
+          <!-- Contraseña -->
+          <ion-item>
+            <img
+              slot="start"
+              src="assets/images/password.png"
+              alt="Contraseña"
+              style="width: 25px; height: 25px"
+            />
+            <ion-input
+              formControlName="contrasena"
+              type="password"
+              placeholder="Contraseña"
+            ></ion-input>
+          </ion-item>
+
+          <!-- Botón ingresar -->
+          <ion-button expand="block" class="login-btn" (click)="login()">
+            Ingresar
+          </ion-button>
+
+          <!-- Recuperar contraseña -->
+          <p class="recover" (click)="goToRecuperar()">
+            Recupera tu contraseña
+          </p>
+
+          <!-- Botón con Google -->
+          <ion-button expand="block" class="google-btn" (click)="googleLogin()">
+            <img src="https://www.google.com/favicon.ico" class="google-icon" />
+            Ingresa con Google
+          </ion-button>
+          <p class="register">
+            ¿No tienes cuenta?
+          <a class="register-link" (click)="goToRegistro()">Regístrate</a>
+          </p>
+        </ion-col>
+      </ion-row>
+    </form>
+  </ion-grid>
+</ion-content>

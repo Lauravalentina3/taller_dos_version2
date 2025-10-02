@@ -1,0 +1,42 @@
+<ion-content>
+  <app-header-interno
+    [nombreApp]="'Family Friend'"
+    [ubicacion]="'Bogotá, Colombia'"
+    [mostrarPerfil]="true">
+  </app-header-interno>
+  <div class="inicio-container">
+
+    <section class="hero">
+      <h1>¡Bienvenido a Family Friend</h1>
+      <p>Tu espacio digital para explorar, aprender y disfrutar.</p>
+      <ion-button expand="block" color="--primary-color" (click)="irAExplorar()">
+        Explorar ahora
+      </ion-button>
+    </section>
+
+    <!-- Sección de tarjetas -->
+    <section class="tarjetas">
+      <ion-card (click)="irASeccion('novedades')">
+        <img src="assets/images/novedades.jpeg" alt="Novedades">
+        <ion-card-header>
+          <ion-card-title>Novedades</ion-card-title>
+        </ion-card-header>
+      </ion-card>
+
+      <ion-card (click)="irASeccion('servicios')">
+        <img src="assets/images/servicios.jpeg" alt="Servicios">
+        <ion-card-header>
+          <ion-card-title>Servicios</ion-card-title>
+        </ion-card-header>
+      </ion-card>
+
+      <ion-card (click)="irASeccion('contacto')">
+        <img src="assets/images/contacto.png" alt="Contacto">
+        <ion-card-header>
+          <ion-card-title>Contáctanos</ion-card-title>
+        </ion-card-header>
+      </ion-card>
+    </section>
+
+  </div>
+</ion-content>

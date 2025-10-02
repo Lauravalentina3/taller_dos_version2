@@ -1,0 +1,80 @@
+<ion-content>
+  <div class="registro-container">
+    <!-- Logo y nombre -->
+    <img src="assets/images/logo.png" alt="Logo" class="registro-logo" />
+    <h1 class="registro-title">Family Friend</h1>
+    <p class="registro-subtitle">Completa el formulario para crear tu cuenta</p>
+
+    <form [formGroup]="registroForm" (ngSubmit)="onSubmit()">
+      <!-- Nombres -->
+      <ion-item>
+        <ion-label position="floating">Nombres</ion-label>
+        <ion-input type="text" formControlName="nombre"></ion-input>
+      </ion-item>
+      <ion-note color="danger" *ngIf="registroForm.get('nombre')?.touched && registroForm.get('nombre')?.hasError('required')">
+        Los nombres son obligatorios.
+      </ion-note>
+
+      <!-- Apellidos -->
+      <ion-item>
+        <ion-label position="floating">Apellidos</ion-label>
+        <ion-input type="text" formControlName="apellidos"></ion-input>
+      </ion-item>
+      <ion-note color="danger" *ngIf="registroForm.get('apellidos')?.touched && registroForm.get('apellidos')?.hasError('required')">
+        Los apellidos son obligatorios.
+      </ion-note>
+
+      <!-- Correo -->
+      <ion-item>
+        <ion-label position="floating">Correo Electrónico</ion-label>
+        <ion-input type="email" formControlName="correo"></ion-input>
+      </ion-item>
+      <ion-note color="danger" *ngIf="registroForm.get('correo')?.touched && registroForm.get('correo')?.hasError('email')">
+        Ingresa un correo válido.
+      </ion-note>
+
+      <!-- Teléfono -->
+      <ion-item>
+        <ion-label position="floating">Teléfono</ion-label>
+        <ion-input type="tel" formControlName="telefono"></ion-input>
+      </ion-item>
+      <ion-note color="danger" *ngIf="registroForm.get('telefono')?.touched && registroForm.get('telefono')?.hasError('pattern')">
+        Solo se permiten números.
+      </ion-note>
+
+      <!-- Contraseña -->
+      <ion-item>
+        <ion-label position="floating">Contraseña</ion-label>
+        <ion-input type="password" formControlName="contrasena"></ion-input>
+      </ion-item>
+      <ion-note color="danger" *ngIf="registroForm.get('contrasena')?.touched && registroForm.get('contrasena')?.hasError('minlength')">
+        La contraseña debe tener mínimo 10 caracteres.
+      </ion-note>
+
+      <!-- Confirmar contraseña -->
+      <ion-item>
+        <ion-label position="floating">Repetir Contraseña</ion-label>
+        <ion-input type="password" formControlName="confirmarContrasena"></ion-input>
+      </ion-item>
+      <ion-note color="danger" *ngIf="registroForm.errors?.['mismatch'] && registroForm.get('confirmarContrasena')?.touched">
+        Las contraseñas no coinciden.
+      </ion-note>
+
+      <!-- Términos y condiciones -->
+      <ion-item lines="none">
+        <ion-checkbox slot="start" formControlName="terminos"></ion-checkbox>
+          <ion-label>Acepto términos y condiciones</ion-label>
+      </ion-item>
+
+      <!-- Botón registro -->
+      <ion-button expand="block" type="submit" [disabled]="registroForm.invalid">
+        Registrarse
+      </ion-button>
+    </form>
+
+    <!-- Redirección -->
+    <p class="redirect">
+      ¿Ya tienes cuenta? <a routerLink="/login">Inicia sesión</a>
+    </p>
+  </div>
+</ion-content>

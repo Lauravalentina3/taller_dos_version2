@@ -1,0 +1,7 @@
+{
+  "name": "Taller_Dos",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}

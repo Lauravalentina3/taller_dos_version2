@@ -1,0 +1,38 @@
+<ion-content [fullscreen]="true" class="recuperar-content">
+  <ion-grid class="ion-text-center">
+    <!-- Logo -->
+    <ion-row>
+      <ion-col>
+        <img src="assets/images/logo.png" alt="Logo" class="logo" />
+      </ion-col>
+    </ion-row>
+
+    <!-- Mensaje -->
+    <ion-row>
+      <ion-col>
+        <p>Ingrese su correo electrónico para recuperar su contraseña.</p>
+      </ion-col>
+    </ion-row>
+
+    <!-- Formulario -->
+    <form [formGroup]="recuperarForm" (ngSubmit)="enviarRecuperacion()">
+      <ion-list>
+        <ion-item>
+          <ion-input
+            type="email"
+            placeholder="Correo Electrónico"
+            formControlName="correo">
+          </ion-input>
+        </ion-item>
+      </ion-list>
+
+      <!-- Botón -->
+      <ion-button 
+        expand="block"  
+        class="ion-margin-top" 
+        type="submit">
+        Enviar Solicitud
+      </ion-button>
+    </form>
+  </ion-grid>
+</ion-content>
